@@ -18,6 +18,13 @@
     <div class="gacha">
         <button onclick="Gacha(1)">Single Pull</button>
         <button onclick="Gacha(10)">10-Pull</button>
+        <button onclick="toggleRates()">Rates</button>
+    </div>
+    <div id="pullRatesMenu" class="pull-rates-overlay">
+        <div class="pull-rates-content">
+            <span class="close-button" onclick="toggleRates()">&times;</span>
+            <img src="img/pull_rates.png" alt="Pull Rates">
+        </div>
     </div>
 
     <div class="results" id="results"></div>

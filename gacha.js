@@ -92,3 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+function toggleRates() {
+    const menu = document.getElementById("pullRatesMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
