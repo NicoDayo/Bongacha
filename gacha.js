@@ -1,16 +1,16 @@
 function Gacha(pulls = 1) {
     const rates = {
-        "5★": 3,  // Bombergirls (excluding Shiro, Oren, Momoko, Emera)
-        "4★": 7,  // Outfits or BGM
-        "3★": 15, // Alt skills
-        "2★": 30, // Accessories
-        "1★": 45  // Chat voices
+        "5★": 3,
+        "4★": 7,
+        "3★": 15,
+        "2★": 30,
+        "1★": 45
     };
 
     const fiveStarBombergirls = [
         "Kuro", "Urushi", "Papuru", "Aqua", "Shiori", "Sepia", "Tsugaru", "Grim",
         "Grey", "Asagi", "Pastel", "Pine", "Shiron", "Tekka", "Olive", "Prune",
-        "Platina", "Chigusa", "Silva", "Melon", "Dark", "Chiama", "Brass", "Blueberry", 
+        "Platina", "Chigusa", "Silva", "Melon", "Dark", "Chiamo", "Brass", "Blueberry", 
         "Suisui", "Hiiro"
     ];
 
@@ -37,7 +37,6 @@ function Gacha(pulls = 1) {
         }
     }
 
-    // Guarantee at least one 3★ or higher in a 10-pull
     if (pulls === 10 && !results.some(r => r.rarity === "3★" || r.rarity === "4★" || r.rarity === "5★")) {
         results[9] = { rarity: "3★", name: "" };
     }
@@ -48,6 +47,7 @@ function Gacha(pulls = 1) {
 function displayResults(results) {
     let resultContainer = document.getElementById("results");
     resultContainer.innerHTML = "";
+    resultContainer.className = results.length === 1 ? "results single" : "results ten";
 
     results.forEach((result, index) => {
         let div = document.createElement("div");
@@ -66,7 +66,7 @@ function displayResults(results) {
             img.src = result.img;
             img.alt = result.name;
             div.appendChild(img);
-            text.innerText += ` - ${result.name}`;
+            text.innerText += `  ${result.name}`;
         }
 
         div.appendChild(text);
