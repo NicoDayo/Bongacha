@@ -1,3 +1,5 @@
+let ticketAmount = 0;
+
 function Gacha(pulls = 1) {
     const rates = {
         "5★": 3,
@@ -40,8 +42,13 @@ function Gacha(pulls = 1) {
     if (pulls === 10 && !results.some(r => r.rarity === "3★" || r.rarity === "4★" || r.rarity === "5★")) {
         results[9] = { rarity: "3★", name: "" };
     }
-
+    updateTickets(pulls);
     displayResults(results);
+}
+
+function updateTickets(pulls){
+    ticketAmount += (pulls === 10) ? 100 : 10;
+    document.getElementById("ticketAmount").innerText = `Tickets Used: ${ticketAmount}`;
 }
 
 function displayResults(results) {
