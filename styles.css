@@ -153,22 +153,62 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-    button {
-        width: 90%;
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
         font-size: 16px;
     }
 
     .results.ten {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .result-item {
-        width: 90px;
-        height: 110px;
+        width: 75px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.4s forwards;
+        overflow: hidden;
+    }
+
+    .result-item .stars {
+        font-size: 12px;
+        margin-bottom: 0;
     }
 
     .result-item img {
-        width: 70px;
-        height: 70px;
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        margin-bottom: -10px;
+    }
+
+    .result-item .name {
+        font-size: 8px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .results.ten .result-item:nth-child(10) {
+        grid-column: 2 / span 1;
     }
 }
