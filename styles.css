@@ -171,8 +171,8 @@ button:hover {
     }
 
     .result-item {
-        width: 75px !important;
-        height: 90px !important;
+        width: 75px;
+        height: 90px;
         display: flex;
         flex-direction: column;
         justify-content: center;
