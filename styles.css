@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.gacha {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffcc00;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.result-item {
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-radius: 12px;
+    border: 3px solid white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.4s forwards;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.result-item p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+    word-wrap: break-word;
+    padding: 2px;
+}
+
+.result-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon Colors */
+.rarity-5 {
+    border-color: #FFFF00;
+    box-shadow: 0px 0px 12px #FFFF00;
+}
+
+.rarity-4 {
+    border-color: #FF00FF;
+    box-shadow: 0px 0px 12px #FF00FF;
+}
+
+.rarity-3 {
+    border-color: #00FFFF;
+    box-shadow: 0px 0px 12px #00FFFF;
+}
+
+.rarity-2 {
+    border-color: #00FF00;
+    box-shadow: 0px 0px 12px #00FF00;
+}
+
+.rarity-1 {
+    border-color: #AAAAAA;
+    box-shadow: 0px 0px 10px #AAAAAA;
+}
+
+@media (max-width: 600px) {
+    button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .result-item {
+        width: 90px;
+        height: 110px;
+    }
+
+    .result-item img {
+        width: 70px;
+        height: 70px;
+    }
+}
