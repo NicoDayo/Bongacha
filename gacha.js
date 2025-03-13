@@ -7,7 +7,7 @@ function Gacha(pulls = 1) {
         "1★": 45
     };
 
-    const fiveStarBombergirls = [
+    const bongas = [
         "Kuro", "Urushi", "Aqua", "Shiori", "Sepia", "Tsugaru", "Grim",
         "Grey", "Asagi", "Pastel", "Pine", "Shiron", "Tekka", "Olive", "Prune",
         "Platina", "Chigusa", "Silva", "Melon", "Dark", "Chiamo", "Brass", "Blueberry", 
@@ -30,7 +30,7 @@ function Gacha(pulls = 1) {
         }
 
         if (rarity === "5★") {
-            let selected = fiveStarBombergirls[Math.floor(Math.random() * fiveStarBombergirls.length)];
+            let selected = bongas[Math.floor(Math.random() * bongas.length)];
             results.push({ rarity, name: selected, img: `img/${selected.toLowerCase()}.png` });
         } else {
             results.push({ rarity, name: "" });
