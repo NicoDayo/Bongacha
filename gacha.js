@@ -73,3 +73,15 @@ function displayResults(results) {
         resultContainer.appendChild(div);
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const pine = document.querySelector(".pine");
+
+    if (pine) {
+        pine.addEventListener("click", function () {
+            pine.classList.remove("clicked");
+            void pine.offsetWidth;
+            pine.classList.add("clicked");
+        });
+    }
+});
