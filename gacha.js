@@ -8,7 +8,7 @@ function Gacha(pulls = 1) {
     };
 
     const fiveStarBombergirls = [
-        "Kuro", "Urushi", "Papuru", "Aqua", "Shiori", "Sepia", "Tsugaru", "Grim",
+        "Kuro", "Urushi", "Aqua", "Shiori", "Sepia", "Tsugaru", "Grim",
         "Grey", "Asagi", "Pastel", "Pine", "Shiron", "Tekka", "Olive", "Prune",
         "Platina", "Chigusa", "Silva", "Melon", "Dark", "Chiamo", "Brass", "Blueberry", 
         "Suisui", "Hiiro"
