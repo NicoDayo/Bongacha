@@ -1,6 +1,25 @@
 let ticketAmount = 0;
 
 function Gacha(pulls = 1) {
+    const gachaVideoContainer = document.getElementById("gachaVideoContainer");
+    const gachaVideo = document.getElementById("gachaVideo");
+    const gachaAudio = document.getElementById("gachaAudio");
+
+    document.getElementById("results").style.display = "none";
+
+    gachaVideoContainer.style.display = "flex";
+    gachaVideo.currentTime = 0;
+    gachaAudio.currentTime = 0;
+    gachaVideo.play();
+    gachaAudio.play();
+
+    gachaVideo.onended = function() {
+        gachaVideoContainer.style.display = "none";
+        showGachaResults(pulls);
+    };
+}
+
+function showGachaResults(pulls) {
     const rates = {
         "5★": 3,
         "4★": 7,
@@ -17,7 +36,6 @@ function Gacha(pulls = 1) {
     ];
 
     let results = [];
-
     for (let i = 0; i < pulls; i++) {
         let roll = Math.random() * 100;
         let cumulative = 0;
@@ -46,7 +64,7 @@ function Gacha(pulls = 1) {
     displayResults(results);
 }
 
-function updateTickets(pulls){
+function updateTickets(pulls) {
     ticketAmount += (pulls === 10) ? 100 : 10;
     document.getElementById("ticketAmount").innerText = `Tickets Used: ${ticketAmount}`;
 }
@@ -54,6 +72,8 @@ function updateTickets(pulls){
 function displayResults(results) {
     let resultContainer = document.getElementById("results");
     resultContainer.innerHTML = "";
+    resultContainer.style.display = "grid";
+    
     resultContainer.className = results.length === 1 ? "results single" : "results ten";
 
     results.forEach((result, index) => {
@@ -79,6 +99,8 @@ function displayResults(results) {
         div.appendChild(text);
         resultContainer.appendChild(div);
     });
+
+    resultContainer.style.display = "grid";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
