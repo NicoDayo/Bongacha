@@ -40,7 +40,6 @@ function showGachaResults(pulls) {
         let roll = Math.random() * 100;
         let cumulative = 0;
         let rarity = "1★";
-
         for (let [star, chance] of Object.entries(rates)) {
             cumulative += chance;
             if (roll < cumulative) {
